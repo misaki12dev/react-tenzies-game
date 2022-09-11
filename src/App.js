@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Dice from "./components/Dice";
 
 export default function App() {
@@ -20,9 +20,14 @@ export default function App() {
     return <Dice value={num} />;
   });
 
+  function generateNewArray() {
+    setDice(allNewDice())
+  }
+
   return (
     <main>
       <div className="container">{diceElement}</div>
+      <button onClick={generateNewArray}>Roll Dice</button>
     </main>
   );
 }
